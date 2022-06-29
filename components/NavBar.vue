@@ -1,6 +1,8 @@
 <template>
   <nav class="nav-bar">
-    <a href="">HOME</a>
+    <a href="#">
+        <img src="https://i2.lensdump.com/i/tzKEc3.webp" alt="Home">
+    </a>
     <form action="">Search O-</form>
     <ul>
         <li>|||</li>

@@ -1,9 +1,9 @@
 <template>
   <div class="comic-list-wrapper">
     <div class="comic-list">
-      <div v-for="(comic, index) in comicList" :key="index" class="comic">
+      <div v-for="(comic, index) in comicList.values" :key="index" class="comic">
         <h2>{{ comic.title }}</h2>
-        <img :src="comic.comicImageList[0]" alt="" />
+        <img :src="comic[1]" alt="" />
       </div>
     </div>
   </div>
@@ -13,34 +13,19 @@
 export default {
   data() {
     return {
-      comicList: [
-        {
-          title: 'Title 1',
-          comicImageList: [
-            'https://i.lensdump.com/i/tzKCsD.md.webp',
-            'https://i1.lensdump.com/i/tzKgVT.webp',
-            'https://i1.lensdump.com/i/tzKgVT.webp',
-          ],
-        },
-        {
-          title: 'Title 2',
-          comicImageList: [
-            'https://i1.lensdump.com/i/tzBH45.png',
-            'https://i1.lensdump.com/i/tzBH45.png',
-            'https://i1.lensdump.com/i/tzBH45.png',
-          ],
-        },
-        {
-          title: 'Title 3',
-          comicImageList: [
-            'https://i1.lensdump.com/i/tzBH45.png',
-            'https://i1.lensdump.com/i/tzBH45.png',
-            'https://i1.lensdump.com/i/tzBH45.png',
-          ],
-        },
-      ],
+      comicList: [],
     }
   },
+
+  async fetch() {
+      this.comicList = await fetch(
+        'https://sheets.googleapis.com/v4/spreadsheets/1MfsnN7IPw-iBIEy8fn4fEn6D6aQIiOQ8TQDCClcObsE/values/Sheet1?key=AIzaSyBeJ3Tr13K7dzwYs8tDIKcOMt-EWA8mSo8'
+      ).then(res => res.json())
+    },
+
+  created(){
+    
+  }
 }
 </script>
 
