@@ -14,7 +14,6 @@ export default {
 .hero-module{
   img{
     width: 100%;
-    background: #6CA2C1;
     display: block;
   }
 }
