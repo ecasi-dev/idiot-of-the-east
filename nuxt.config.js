@@ -4,7 +4,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'idiot-of-the-east',
+    title: 'Idiot Of The East',
     htmlAttrs: {
       lang: 'en',
     },
